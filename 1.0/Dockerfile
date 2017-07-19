@@ -23,7 +23,7 @@ USER root
 COPY ./fastq2bam.sh /tmp/
 
 RUN mv /tmp/fastq2bam.sh /data/fastq2bam.sh &&\
-    chmod -R a+X /tmp/fastq2bam.sh
+    chmod -R a+X /data/fastq2bam.sh
 
 ENTRYPOINT ["/data/fastq2bam.sh"]
 
