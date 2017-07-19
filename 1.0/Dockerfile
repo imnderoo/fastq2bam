@@ -20,9 +20,10 @@ RUN conda install samtools=1.3
 
 USER root
 
-COPY . /data/
+COPY ./fastq2bam.sh /tmp/
 
-RUN chmod a+x /data/fastq2bam.sh
+RUN mv /tmp/fastq2bam.sh /data/fastq2bam.sh &&\
+    chmod -R a+X /media/fastq2bam.sh
 
 ENTRYPOINT ["/data/fastq2bam.sh"]
 
